@@ -1,0 +1,21 @@
+<!-- download_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Video Downloader</title>
+</head>
+<body>
+    <h1>TikTok Video Downloader</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Download</button>
+    </form>
+    {% if video_path %}
+        <p>Video downloaded successfully! <a href="{{ video_path }}">Download here</a></p>
+    {% endif %}
+</body>
+</html>
